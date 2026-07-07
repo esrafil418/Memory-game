@@ -2,7 +2,7 @@
 
 A fun and interactive memory card game built with **React**, **TypeScript**, and **Tailwind CSS**. Test your memory by matching pairs of emoji cards!
 
-![Game Screenshot](/images/game.png)
+![Game Screenshot](public/images/game.png)
 
 ![Memory Card Game](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
