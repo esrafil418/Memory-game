@@ -1,4 +1,3 @@
-// Step 1: Define the Card type/interface
 interface CardType {
 	id: number;
 	value: string;
@@ -6,10 +5,9 @@ interface CardType {
 	isMatched: boolean;
 }
 
-// Step 2: Define props for the component
 interface CardProps {
 	card: CardType;
-	onClick: (card: CardType) => void; // onClick receives a card object
+	onClick: (card: CardType) => void;
 }
 
 export const Card = ({ card, onClick }: CardProps) => {
@@ -24,14 +22,16 @@ export const Card = ({ card, onClick }: CardProps) => {
       `}
 			onClick={() => onClick(card)}
 		>
-			{/* FRONT of card (shows "?" when not flipped) */}
+			{/* FRONT of card */}
 			<div
 				className={`
           absolute w-full h-full 
           flex items-center justify-center 
-          rounded-2xl shadow-lg 
+          rounded-lg sm:rounded-xl md:rounded-2xl 
+          shadow-md sm:shadow-lg 
           bg-linear-to-b from-slate-800 to-slate-950 
-          text-white font-bold text-5xl 
+          text-white font-bold 
+          text-2xl sm:text-4xl md:text-5xl 
           border-2 border-white/10 
           backface-hidden
           ${!card.isFlipped && !card.isMatched ? "hover:scale-105" : ""}
@@ -42,16 +42,17 @@ export const Card = ({ card, onClick }: CardProps) => {
 				?
 			</div>
 
-			{/* BACK of card (shows emoji when flipped) */}
+			{/* BACK of card */}
 			<div
 				className={`
           absolute w-full h-full 
           flex items-center justify-center 
-          rounded-2xl shadow-lg 
+          rounded-lg sm:rounded-xl md:rounded-2xl 
+          shadow-md sm:shadow-lg 
           bg-neutral-800 
-          text-6xl 
+          text-3xl sm:text-5xl md:text-6xl 
           border-2 border-white/10 
-          backface-hidden 
+          backface-hidden
           transform-[rotateY(180deg)]
           ${card.isMatched ? "bg-emerald-500/20 shadow-[0_0_20px_rgba(126,211,33,0.4)] border-emerald-500/50" : ""}
         `}
